@@ -4,7 +4,7 @@ const summaryContainer = document.getElementById('searchSummary');
 
 let constituencyMap = [];
 
-fetch('/districts.json')
+fetch('districts.json')
   .then(res => res.json())
   .then(data => {
     for (const district in data) {
