@@ -87,7 +87,7 @@
 
       // Redirect to search screen
       const params = new URLSearchParams({ district, constituency, booth });
-      window.location.href = `/search.html?${params.toString()}`;
+      window.location.href = `${window.location.pathname.split('/').slice(0, -1).join('/')}/search.html?${params.toString()}`;
     });
   </script>
 </body>
