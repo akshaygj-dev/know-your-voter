@@ -1,0 +1,961 @@
+{
+  "Bagalkot": [
+    {
+      "constituency_number": 19,
+      "constituency": "Mudhol"
+    },
+    {
+      "constituency_number": 20,
+      "constituency": "Terdal"
+    },
+    {
+      "constituency_number": 21,
+      "constituency": "Jamkhandi"
+    },
+    {
+      "constituency_number": 22,
+      "constituency": "Bilgi"
+    },
+    {
+      "constituency_number": 23,
+      "constituency": "Badami"
+    },
+    {
+      "constituency_number": 24,
+      "constituency": "Bagalkot"
+    },
+    {
+      "constituency_number": 25,
+      "constituency": "Hungund"
+    }
+  ],
+  "Ballary": [
+    {
+      "constituency_number": 91,
+      "constituency": "Kampli"
+    },
+    {
+      "constituency_number": 92,
+      "constituency": "Siruguppa"
+    },
+    {
+      "constituency_number": 93,
+      "constituency": "Bellary Rural"
+    },
+    {
+      "constituency_number": 94,
+      "constituency": "Bellary City"
+    },
+    {
+      "constituency_number": 95,
+      "constituency": "Sandur"
+    }
+  ],
+  "Belagavi": [
+    {
+      "constituency_number": 1,
+      "constituency": "Nippani"
+    },
+    {
+      "constituency_number": 2,
+      "constituency": "Chikkodi-Sadalga"
+    },
+    {
+      "constituency_number": 3,
+      "constituency": "Athani"
+    },
+    {
+      "constituency_number": 4,
+      "constituency": "Kagwad"
+    },
+    {
+      "constituency_number": 5,
+      "constituency": "Kudachi",
+      "sheet_id": "1QNRRQSLsgpaYTH-N22zwZLYk-qwo0OiQWNN5V64_oLI"
+    },
+    {
+      "constituency_number": 6,
+      "constituency": "Raibag"
+    },
+    {
+      "constituency_number": 7,
+      "constituency": "Hukkeri"
+    },
+    {
+      "constituency_number": 8,
+      "constituency": "Arabhavi"
+    },
+    {
+      "constituency_number": 9,
+      "constituency": "Gokak"
+    },
+    {
+      "constituency_number": 10,
+      "constituency": "Yemkanmardi"
+    },
+    {
+      "constituency_number": 11,
+      "constituency": "Belgaum Uttar"
+    },
+    {
+      "constituency_number": 12,
+      "constituency": "Belgaum Dakshin"
+    },
+    {
+      "constituency_number": 13,
+      "constituency": "Belgaum Rural"
+    },
+    {
+      "constituency_number": 14,
+      "constituency": "Khanapur"
+    },
+    {
+      "constituency_number": 15,
+      "constituency": "Kittur"
+    },
+    {
+      "constituency_number": 16,
+      "constituency": "Bailhongal"
+    },
+    {
+      "constituency_number": 17,
+      "constituency": "Saundatti Yellamma"
+    },
+    {
+      "constituency_number": 18,
+      "constituency": "Ramdurg"
+    }
+  ],
+  "Bengaluru Rural": [
+    {
+      "constituency_number": 178,
+      "constituency": "Hosakote"
+    },
+    {
+      "constituency_number": 179,
+      "constituency": "Devanahalli"
+    },
+    {
+      "constituency_number": 180,
+      "constituency": "Doddaballapur"
+    },
+    {
+      "constituency_number": 181,
+      "constituency": "Nelamangala"
+    }
+  ],
+  "Bengaluru Urban": [
+    {
+      "constituency_number": 150,
+      "constituency": "Yelahanka"
+    },
+    {
+      "constituency_number": 151,
+      "constituency": "K.R. Pura"
+    },
+    {
+      "constituency_number": 152,
+      "constituency": "Byatarayanapura"
+    },
+    {
+      "constituency_number": 153,
+      "constituency": "Yeshwanthapura"
+    },
+    {
+      "constituency_number": 154,
+      "constituency": "Rajarajeshwarinagar"
+    },
+    {
+      "constituency_number": 155,
+      "constituency": "Dasarahalli"
+    },
+    {
+      "constituency_number": 156,
+      "constituency": "Mahalakshmi Layout"
+    },
+    {
+      "constituency_number": 157,
+      "constituency": "Malleshwaram"
+    },
+    {
+      "constituency_number": 158,
+      "constituency": "Hebbal"
+    },
+    {
+      "constituency_number": 159,
+      "constituency": "Pulakeshinagar"
+    },
+    {
+      "constituency_number": 160,
+      "constituency": "Sarvagnanagar"
+    },
+    {
+      "constituency_number": 161,
+      "constituency": "C.V. Ramannagar"
+    },
+    {
+      "constituency_number": 162,
+      "constituency": "Shivajinagar"
+    },
+    {
+      "constituency_number": 163,
+      "constituency": "Shantinagar"
+    },
+    {
+      "constituency_number": 164,
+      "constituency": "Gandhinagar"
+    },
+    {
+      "constituency_number": 165,
+      "constituency": "Rajajinagar"
+    },
+    {
+      "constituency_number": 166,
+      "constituency": "Govindarajanagar"
+    },
+    {
+      "constituency_number": 167,
+      "constituency": "Vijayanagar"
+    },
+    {
+      "constituency_number": 168,
+      "constituency": "Chamrajapet"
+    },
+    {
+      "constituency_number": 169,
+      "constituency": "Chickpet"
+    },
+    {
+      "constituency_number": 170,
+      "constituency": "Basavanagudi"
+    },
+    {
+      "constituency_number": 171,
+      "constituency": "Padmanabanagar"
+    },
+    {
+      "constituency_number": 172,
+      "constituency": "B.T.M Layout"
+    },
+    {
+      "constituency_number": 173,
+      "constituency": "Jayanagar"
+    },
+    {
+      "constituency_number": 174,
+      "constituency": "Mahadevapura"
+    },
+    {
+      "constituency_number": 175,
+      "constituency": "Bommanahalli"
+    },
+    {
+      "constituency_number": 176,
+      "constituency": "Bangalore South"
+    },
+    {
+      "constituency_number": 177,
+      "constituency": "Anekal"
+    }
+  ],
+  "Bidar": [
+    {
+      "constituency_number": 47,
+      "constituency": "Basavakalyan"
+    },
+    {
+      "constituency_number": 48,
+      "constituency": "Humnabad"
+    },
+    {
+      "constituency_number": 49,
+      "constituency": "Bidar South"
+    },
+    {
+      "constituency_number": 50,
+      "constituency": "Bidar"
+    },
+    {
+      "constituency_number": 51,
+      "constituency": "Bhalki"
+    },
+    {
+      "constituency_number": 52,
+      "constituency": "Aurad"
+    }
+  ],
+  "Chamarajanagar": [
+    {
+      "constituency_number": 221,
+      "constituency": "Hanur"
+    },
+    {
+      "constituency_number": 222,
+      "constituency": "Kollegal"
+    },
+    {
+      "constituency_number": 223,
+      "constituency": "Chamarajanagar"
+    },
+    {
+      "constituency_number": 224,
+      "constituency": "Gundlupet"
+    }
+  ],
+  "Chikkaballapur": [
+    {
+      "constituency_number": 139,
+      "constituency": "Gauribidanur"
+    },
+    {
+      "constituency_number": 140,
+      "constituency": "Bagepalli"
+    },
+    {
+      "constituency_number": 141,
+      "constituency": "Chikkaballapur"
+    },
+    {
+      "constituency_number": 142,
+      "constituency": "Sidlaghatta"
+    },
+    {
+      "constituency_number": 143,
+      "constituency": "Chintamani"
+    }
+  ],
+  "Chikkamagaluru": [
+    {
+      "constituency_number": 123,
+      "constituency": "Sringeri"
+    },
+    {
+      "constituency_number": 124,
+      "constituency": "Mudigere"
+    },
+    {
+      "constituency_number": 125,
+      "constituency": "Chikkamagaluru"
+    },
+    {
+      "constituency_number": 126,
+      "constituency": "Tarikere"
+    },
+    {
+      "constituency_number": 127,
+      "constituency": "Kadur"
+    }
+  ],
+  "Chitradurga": [
+    {
+      "constituency_number": 97,
+      "constituency": "Molakalmuru"
+    },
+    {
+      "constituency_number": 98,
+      "constituency": "Challakere"
+    },
+    {
+      "constituency_number": 99,
+      "constituency": "Chitradurga"
+    },
+    {
+      "constituency_number": 100,
+      "constituency": "Hiriyur"
+    },
+    {
+      "constituency_number": 101,
+      "constituency": "Hosadurga"
+    },
+    {
+      "constituency_number": 102,
+      "constituency": "Holalkere"
+    }
+  ],
+  "Dakshina Kannada": [
+    {
+      "constituency_number": 200,
+      "constituency": "Belthangady"
+    },
+    {
+      "constituency_number": 201,
+      "constituency": "Moodabidri"
+    },
+    {
+      "constituency_number": 202,
+      "constituency": "Mangalore City North"
+    },
+    {
+      "constituency_number": 203,
+      "constituency": "Mangalore City South"
+    },
+    {
+      "constituency_number": 204,
+      "constituency": "Mangalore"
+    },
+    {
+      "constituency_number": 205,
+      "constituency": "Bantwal"
+    },
+    {
+      "constituency_number": 206,
+      "constituency": "Puttur"
+    },
+    {
+      "constituency_number": 207,
+      "constituency": "Sullia"
+    }
+  ],
+  "Davangere": [
+    {
+      "constituency_number": 103,
+      "constituency": "Jagalur"
+    },
+    {
+      "constituency_number": 105,
+      "constituency": "Harihar"
+    },
+    {
+      "constituency_number": 106,
+      "constituency": "Davanagere North"
+    },
+    {
+      "constituency_number": 107,
+      "constituency": "Davanagere South"
+    },
+    {
+      "constituency_number": 108,
+      "constituency": "Mayakonda"
+    },
+    {
+      "constituency_number": 109,
+      "constituency": "Channagiri"
+    },
+    {
+      "constituency_number": 110,
+      "constituency": "Honnali"
+    }
+  ],
+  "Dharwad": [
+    {
+      "constituency_number": 69,
+      "constituency": "Navalgund"
+    },
+    {
+      "constituency_number": 70,
+      "constituency": "Kundgol"
+    },
+    {
+      "constituency_number": 71,
+      "constituency": "Dharwad"
+    },
+    {
+      "constituency_number": 72,
+      "constituency": "Hubli-Dharwad East"
+    },
+    {
+      "constituency_number": 73,
+      "constituency": "Hubli-Dharwad Central"
+    },
+    {
+      "constituency_number": 74,
+      "constituency": "Hubli-Dharwad West"
+    },
+    {
+      "constituency_number": 75,
+      "constituency": "Kalghatgi"
+    }
+  ],
+  "Gadag": [
+    {
+      "constituency_number": 65,
+      "constituency": "Shirahatti"
+    },
+    {
+      "constituency_number": 66,
+      "constituency": "Gadag"
+    },
+    {
+      "constituency_number": 67,
+      "constituency": "Ron"
+    },
+    {
+      "constituency_number": 68,
+      "constituency": "Nargund"
+    }
+  ],
+  "Hassan": [
+    {
+      "constituency_number": 193,
+      "constituency": "Shravanabelagola"
+    },
+    {
+      "constituency_number": 194,
+      "constituency": "Arsikere"
+    },
+    {
+      "constituency_number": 195,
+      "constituency": "Belur"
+    },
+    {
+      "constituency_number": 196,
+      "constituency": "Hassan"
+    },
+    {
+      "constituency_number": 197,
+      "constituency": "Holenarasipur"
+    },
+    {
+      "constituency_number": 198,
+      "constituency": "Arakalgud"
+    },
+    {
+      "constituency_number": 199,
+      "constituency": "Sakaleshpur"
+    }
+  ],
+  "Haveri": [
+    {
+      "constituency_number": 82,
+      "constituency": "Hangal"
+    },
+    {
+      "constituency_number": 83,
+      "constituency": "Shiggaon"
+    },
+    {
+      "constituency_number": 84,
+      "constituency": "Haveri"
+    },
+    {
+      "constituency_number": 85,
+      "constituency": "Byadgi"
+    },
+    {
+      "constituency_number": 86,
+      "constituency": "Hirekerur"
+    },
+    {
+      "constituency_number": 87,
+      "constituency": "Ranebennur"
+    }
+  ],
+  "Kalaburagi": [
+    {
+      "constituency_number": 34,
+      "constituency": "Afzalpur"
+    },
+    {
+      "constituency_number": 35,
+      "constituency": "Jevargi"
+    },
+    {
+      "constituency_number": 40,
+      "constituency": "Chittapur"
+    },
+    {
+      "constituency_number": 41,
+      "constituency": "Sedam"
+    },
+    {
+      "constituency_number": 42,
+      "constituency": "Chincholi"
+    },
+    {
+      "constituency_number": 43,
+      "constituency": "Gulbarga Rural"
+    },
+    {
+      "constituency_number": 44,
+      "constituency": "Gulbarga Dakshin"
+    },
+    {
+      "constituency_number": 45,
+      "constituency": "Gulbarga Uttar"
+    },
+    {
+      "constituency_number": 46,
+      "constituency": "Aland"
+    }
+  ],
+  "Kodagu": [
+    {
+      "constituency_number": 208,
+      "constituency": "Madikeri"
+    },
+    {
+      "constituency_number": 209,
+      "constituency": "Virajpet"
+    }
+  ],
+  "Kolar": [
+    {
+      "constituency_number": 144,
+      "constituency": "Srinivasapur"
+    },
+    {
+      "constituency_number": 145,
+      "constituency": "Mulbagal"
+    },
+    {
+      "constituency_number": 146,
+      "constituency": "Kolar Gold Field"
+    },
+    {
+      "constituency_number": 147,
+      "constituency": "Bangarapet"
+    },
+    {
+      "constituency_number": 148,
+      "constituency": "Kolar"
+    },
+    {
+      "constituency_number": 149,
+      "constituency": "Malur"
+    }
+  ],
+  "Koppal": [
+    {
+      "constituency_number": 60,
+      "constituency": "Kushtagi"
+    },
+    {
+      "constituency_number": 61,
+      "constituency": "Kanakagiri"
+    },
+    {
+      "constituency_number": 62,
+      "constituency": "Gangawati"
+    },
+    {
+      "constituency_number": 63,
+      "constituency": "Yelburga"
+    },
+    {
+      "constituency_number": 64,
+      "constituency": "Koppal"
+    }
+  ],
+  "Mandya": [
+    {
+      "constituency_number": 186,
+      "constituency": "Malavalli"
+    },
+    {
+      "constituency_number": 187,
+      "constituency": "Maddur"
+    },
+    {
+      "constituency_number": 188,
+      "constituency": "Melukote"
+    },
+    {
+      "constituency_number": 189,
+      "constituency": "Mandya"
+    },
+    {
+      "constituency_number": 190,
+      "constituency": "Shrirangapattana"
+    },
+    {
+      "constituency_number": 191,
+      "constituency": "Nagamangala"
+    },
+    {
+      "constituency_number": 192,
+      "constituency": "Krishnarajpet"
+    }
+  ],
+  "Mysuru": [
+    {
+      "constituency_number": 210,
+      "constituency": "Piriyapatna"
+    },
+    {
+      "constituency_number": 211,
+      "constituency": "Krishnarajanagara"
+    },
+    {
+      "constituency_number": 212,
+      "constituency": "Hunsur"
+    },
+    {
+      "constituency_number": 213,
+      "constituency": "Heggadadevankote"
+    },
+    {
+      "constituency_number": 214,
+      "constituency": "Nanjangud"
+    },
+    {
+      "constituency_number": 215,
+      "constituency": "Chamundeshwari"
+    },
+    {
+      "constituency_number": 216,
+      "constituency": "Krishnaraja"
+    },
+    {
+      "constituency_number": 217,
+      "constituency": "Chamaraja"
+    },
+    {
+      "constituency_number": 218,
+      "constituency": "Narasimharaja"
+    },
+    {
+      "constituency_number": 219,
+      "constituency": "Varuna"
+    },
+    {
+      "constituency_number": 220,
+      "constituency": "T. Narasipur"
+    }
+  ],
+  "Raichur": [
+    {
+      "constituency_number": 53,
+      "constituency": "Raichur Rural"
+    },
+    {
+      "constituency_number": 54,
+      "constituency": "Raichur"
+    },
+    {
+      "constituency_number": 55,
+      "constituency": "Manvi"
+    },
+    {
+      "constituency_number": 56,
+      "constituency": "Devadurga"
+    },
+    {
+      "constituency_number": 57,
+      "constituency": "Lingsugur"
+    },
+    {
+      "constituency_number": 58,
+      "constituency": "Sindhanur"
+    },
+    {
+      "constituency_number": 59,
+      "constituency": "Maski"
+    }
+  ],
+  "Ramanagara": [
+    {
+      "constituency_number": 182,
+      "constituency": "Magadi"
+    },
+    {
+      "constituency_number": 183,
+      "constituency": "Ramanagaram"
+    },
+    {
+      "constituency_number": 184,
+      "constituency": "Kanakapura"
+    },
+    {
+      "constituency_number": 185,
+      "constituency": "Channapatna"
+    }
+  ],
+  "Shivamogga": [
+    {
+      "constituency_number": 111,
+      "constituency": "Shimoga Rural"
+    },
+    {
+      "constituency_number": 112,
+      "constituency": "Bhadravathi"
+    },
+    {
+      "constituency_number": 113,
+      "constituency": "Shimoga"
+    },
+    {
+      "constituency_number": 114,
+      "constituency": "Tirthahalli"
+    },
+    {
+      "constituency_number": 115,
+      "constituency": "Shikaripura"
+    },
+    {
+      "constituency_number": 116,
+      "constituency": "Sorab"
+    },
+    {
+      "constituency_number": 117,
+      "constituency": "Sagar"
+    }
+  ],
+  "Tumakuru": [
+    {
+      "constituency_number": 128,
+      "constituency": "Chikknayakanhalli"
+    },
+    {
+      "constituency_number": 129,
+      "constituency": "Tiptur"
+    },
+    {
+      "constituency_number": 130,
+      "constituency": "Turuvekere"
+    },
+    {
+      "constituency_number": 131,
+      "constituency": "Kunigal"
+    },
+    {
+      "constituency_number": 132,
+      "constituency": "Tumkur City"
+    },
+    {
+      "constituency_number": 133,
+      "constituency": "Tumkur Rural"
+    },
+    {
+      "constituency_number": 134,
+      "constituency": "Koratagere"
+    },
+    {
+      "constituency_number": 135,
+      "constituency": "Gubbi"
+    },
+    {
+      "constituency_number": 136,
+      "constituency": "Sira"
+    },
+    {
+      "constituency_number": 137,
+      "constituency": "Pavagada"
+    },
+    {
+      "constituency_number": 138,
+      "constituency": "Madhugiri"
+    }
+  ],
+  "Udupi": [
+    {
+      "constituency_number": 118,
+      "constituency": "Byndoor"
+    },
+    {
+      "constituency_number": 119,
+      "constituency": "Kundapur"
+    },
+    {
+      "constituency_number": 120,
+      "constituency": "Udupi"
+    },
+    {
+      "constituency_number": 121,
+      "constituency": "Kaup"
+    },
+    {
+      "constituency_number": 122,
+      "constituency": "Karkala"
+    }
+  ],
+  "Uttara Kannada": [
+    {
+      "constituency_number": 76,
+      "constituency": "Haliyal"
+    },
+    {
+      "constituency_number": 77,
+      "constituency": "Karwar"
+    },
+    {
+      "constituency_number": 78,
+      "constituency": "Kumta"
+    },
+    {
+      "constituency_number": 79,
+      "constituency": "Bhatkal"
+    },
+    {
+      "constituency_number": 80,
+      "constituency": "Sirsi"
+    },
+    {
+      "constituency_number": 81,
+      "constituency": "Yellapur"
+    }
+  ],
+  "Vijayapura": [
+    {
+      "constituency_number": 26,
+      "constituency": "Muddebihal"
+    },
+    {
+      "constituency_number": 27,
+      "constituency": "Devar Hippargi"
+    },
+    {
+      "constituency_number": 28,
+      "constituency": "Basavana Bagevadi"
+    },
+    {
+      "constituency_number": 29,
+      "constituency": "Babaleshwar"
+    },
+    {
+      "constituency_number": 30,
+      "constituency": "Bijapur City"
+    },
+    {
+      "constituency_number": 31,
+      "constituency": "Nagathan"
+    },
+    {
+      "constituency_number": 32,
+      "constituency": "Indi"
+    },
+    {
+      "constituency_number": 33,
+      "constituency": "Sindagi"
+    }
+  ],
+  "Vijayanagara": [
+    {
+      "constituency_number": 88,
+      "constituency": "Hoovina Hadagali"
+    },
+    {
+      "constituency_number": 89,
+      "constituency": "Hagaribommanahalli"
+    },
+    {
+      "constituency_number": 90,
+      "constituency": "Vijayanagara"
+    },
+    {
+      "constituency_number": 96,
+      "constituency": "Kudligi"
+    },
+    {
+      "constituency_number": 104,
+      "constituency": "Harapanahalli"
+    }
+  ],
+  "Yadgir": [
+    {
+      "constituency_number": 36,
+      "constituency": "Shorapur"
+    },
+    {
+      "constituency_number": 37,
+      "constituency": "Shahapur"
+    },
+    {
+      "constituency_number": 38,
+      "constituency": "Yadgir"
+    },
+    {
+      "constituency_number": 39,
+      "constituency": "Gurmitkal"
+    }
+  ]
+}

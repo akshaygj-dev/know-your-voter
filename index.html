@@ -1,0 +1,94 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Voter Booth Selection</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 space-y-6">
+    <h1 class="text-2xl font-semibold text-center text-blue-700">Search Voter by Booth</h1>
+
+    <!-- District -->
+    <div>
+      <label class="block mb-1 text-sm font-medium text-gray-700">Select District</label>
+      <select id="districtSelect" class="w-full p-2 rounded border border-gray-300">
+        <option value="">-- Select District --</option>
+      </select>
+    </div>
+
+    <!-- Constituency -->
+    <div>
+      <label class="block mb-1 text-sm font-medium text-gray-700">Select Constituency</label>
+      <select id="constituencySelect" class="w-full p-2 rounded border border-gray-300">
+        <option value="">-- Select Constituency --</option>
+      </select>
+    </div>
+
+    <!-- Booth Number -->
+    <div>
+      <label class="block mb-1 text-sm font-medium text-gray-700">Enter Booth Number</label>
+      <input id="boothInput" type="number" class="w-full p-2 rounded border border-gray-300" placeholder="e.g. 42" />
+    </div>
+
+    <!-- Button -->
+    <button id="nextBtn" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 rounded transition disabled:opacity-50">
+      Next →
+    </button>
+  </div>
+
+  <script>
+    const districtSelect = document.getElementById('districtSelect');
+    const constituencySelect = document.getElementById('constituencySelect');
+    const boothInput = document.getElementById('boothInput');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let districtsData = {};
+
+    // Load districts from JSON file
+    fetch('districts.json')
+      .then(res => res.json())
+      .then(data => {
+        districtsData = data;
+        Object.keys(data).forEach(district => {
+          const option = document.createElement('option');
+          option.value = district;
+          option.textContent = district;
+          districtSelect.appendChild(option);
+        });
+      });
+
+    // Update constituencies on district change
+    districtSelect.addEventListener('change', () => {
+      const selectedDistrict = districtSelect.value;
+      constituencySelect.innerHTML = `<option value="">-- Select Constituency --</option>`;
+      if (districtsData[selectedDistrict]) {
+        districtsData[selectedDistrict].forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.constituency;
+          option.textContent = `${item.constituency_number}. ${item.constituency}`;
+          constituencySelect.appendChild(option);
+        });
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const district = districtSelect.value;
+      const constituency = constituencySelect.value;
+      const booth = boothInput.value;
+
+      if (!district || !constituency || !booth) {
+        alert('Please fill all fields.');
+        return;
+      }
+
+      // Redirect to search screen
+      const params = new URLSearchParams({ district, constituency, booth });
+      window.location.href = `/search.html?${params.toString()}`;
+    });
+  </script>
+</body>
+</html>
