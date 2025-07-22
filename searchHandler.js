@@ -52,6 +52,9 @@ form.addEventListener('submit', async function (e) {
         ageRange
     });
 
+    window.latestResults = results;
+    window.latestSearchParams = { firstName, lastName, gender, ageRange };
+
     // Show analytics
     summaryContainer.classList.remove('hidden');
     summaryContainer.innerHTML = `

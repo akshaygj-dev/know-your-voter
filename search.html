@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voter Search</title>
     <script src="voter-search.js" defer></script>
+    <script src="voter-analyse.js" defer></script>
     <script src="searchHandler.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/heroicons@2.0.16/dist/24/solid.js"></script>
@@ -17,7 +18,7 @@
         <h1 id="search-title" class="text-4xl font-bold mb-6 text-center text-blue-700">Voter Search</h1>
 
         <!-- Search Form -->
-        <form id="searchForm" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+        <form id="searchForm" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             <input type="text" id="firstName" placeholder="First Name"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
@@ -48,6 +49,11 @@
                 class="sm:col-span-2 lg:col-span-1 w-full bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200 font-semibold">
                 🔍 Search
             </button>
+            <button id="analyseBtn" type="button"
+                class="sm:col-span-2 lg:col-span-1 w-full bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-600 transition duration-200 font-semibold">
+                📊 Analyse
+            </button>
+
         </form>
 
         <!-- Search Summary -->
