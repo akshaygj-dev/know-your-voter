@@ -1,4 +1,4 @@
-// voterSearch.js
+// voter-search.js
 
 /**
  * Fetches and filters voter data from a specific Google Sheet endpoint based on query params.

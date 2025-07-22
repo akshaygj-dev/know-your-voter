@@ -1,3 +1,4 @@
+// seachHandler.js
 const form = document.getElementById('searchForm');
 const resultsContainer = document.getElementById('results');
 const summaryContainer = document.getElementById('searchSummary');
@@ -5,55 +6,55 @@ const summaryContainer = document.getElementById('searchSummary');
 let constituencyMap = [];
 
 fetch('districts.json')
-  .then(res => res.json())
-  .then(data => {
-    for (const district in data) {
-      data[district].forEach(c => {
-        constituencyMap.push({ ...c, district });
-      });
-    }
-  });
+    .then(res => res.json())
+    .then(data => {
+        for (const district in data) {
+            data[district].forEach(c => {
+                constituencyMap.push({ ...c, district });
+            });
+        }
+    });
 
 form.addEventListener('submit', async function (e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  const firstName = document.getElementById('firstName').value;
-  const lastName = document.getElementById('lastName').value;
-  const gender = document.getElementById('gender').value;
-  const ageRange = document.getElementById('ageRange').value;
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const gender = document.getElementById('gender').value;
+    const ageRange = document.getElementById('ageRange').value;
 
-  const params = new URLSearchParams(window.location.search);
-  const constituency = params.get('constituency');
-  const booth = params.get('booth');
+    const params = new URLSearchParams(window.location.search);
+    const constituency = params.get('constituency');
+    const booth = params.get('booth');
 
 
-  if (!constituency) {
-    resultsContainer.innerHTML = "Constituency missing in URL.";
-    return;
-  }
+    if (!constituency) {
+        resultsContainer.innerHTML = "Constituency missing in URL.";
+        return;
+    }
 
-  const matched = constituencyMap.find(entry =>
-    entry.constituency.toLowerCase() === constituency.toLowerCase()
-  );
+    const matched = constituencyMap.find(entry =>
+        entry.constituency.toLowerCase() === constituency.toLowerCase()
+    );
 
-  if (!matched || !matched.sheet_id) {
-    resultsContainer.innerHTML = `No sheet found for ${constituency}`;
-    return;
-  }
+    if (!matched || !matched.sheet_id) {
+        resultsContainer.innerHTML = `No sheet found for ${constituency}`;
+        return;
+    }
 
-  const sheetId = matched.sheet_id;
-  const sheetName = booth; // Assuming sheet is named after constituency
+    const sheetId = matched.sheet_id;
+    const sheetName = booth; // Assuming sheet is named after constituency
 
-  const results = await searchVoters(sheetId, sheetName, {
-    firstName,
-    lastName,
-    gender,
-    ageRange
-  });
+    const results = await searchVoters(sheetId, sheetName, {
+        firstName,
+        lastName,
+        gender,
+        ageRange
+    });
 
-  // Show analytics
-  summaryContainer.classList.remove('hidden');
-  summaryContainer.innerHTML = `
+    // Show analytics
+    summaryContainer.classList.remove('hidden');
+    summaryContainer.innerHTML = `
     <p><strong>Search Parameters:</strong></p>
     <ul class="list-disc ml-4">
       ${firstName ? `<li>First Name: ${firstName}</li>` : ''}
@@ -64,19 +65,22 @@ form.addEventListener('submit', async function (e) {
     <p class="mt-2 font-medium">Total Voters Found: ${results.length}</p>
   `;
 
-  if (results.length === 0) {
-    resultsContainer.innerHTML = "<p>No records found.</p>";
-    return;
-  }
+    if (results.length === 0) {
+        resultsContainer.innerHTML = "<p>No records found.</p>";
+        return;
+    }
 
-  resultsContainer.innerHTML = results.map(r => `
-    <div class="p-4 border rounded mb-2 bg-white shadow-sm">
-      <p><strong>Name:</strong> ${r.Name || ''}</p>
-      <p><strong>First Name:</strong> ${r['FIRST NAME']}</p>
-      <p><strong>Last Name:</strong> ${r['LAST NAME']}</p>
-      <p><strong>Gender:</strong> ${r.Gender}</p>
-      <p><strong>Age:</strong> ${r.Age}</p>
-      <p><strong>EPIC:</strong> ${r['EPIC Number']}</p>
-    </div>
-  `).join('');
+    //   <li><strong>First Name:</strong> ${r['FIRST NAME']}</li>
+    //   <li><strong>Last Name:</strong> ${r['LAST NAME']}</li>
+
+    resultsContainer.innerHTML = results.map(r => `
+  <div class="p-4 border rounded-xl bg-white shadow-sm hover:shadow-md transition duration-300">
+    <h2 class="text-lg font-semibold text-blue-700 mb-2">${r.Name || 'Unnamed Voter'}</h2>
+    <ul class="space-y-1 text-sm text-gray-700">
+      <li><strong>Gender:</strong> ${r.Gender}</li>
+      <li><strong>Age:</strong> ${r.Age}</li>
+      <li><strong>EPIC:</strong> ${r['EPIC Number']}</li>
+    </ul>
+  </div>
+`).join('');
 });
