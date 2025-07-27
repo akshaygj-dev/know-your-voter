@@ -29,7 +29,7 @@ fetch('districts.json')
                 // Fetch and populate last names
                 const lastNames = await fetchUniqueLastNames(matched.sheet_id, booth);
                 lastNameSelect.innerHTML = `
-                    <option value="">Select Last Name</option>
+                    <option value="">Any Last Name</option>
                     ${lastNames.map(name => `<option value="${name}">${name}</option>`).join('')}
                 `;
             }

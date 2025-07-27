@@ -2,81 +2,115 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voter Search</title>
-    <script src="voter-search.js" defer></script>
-    <script src="voter-analyse.js" defer></script>
-    <script src="searchHandler.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/heroicons@2.0.16/dist/24/solid.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Know Your Voter</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Heroicons -->
+  <script src="https://unpkg.com/heroicons@2.0.16/dist/24/solid.js"></script>
+
+  <!-- Scripts -->
+  <script src="voter-search.js" defer></script>
+  <script src="voter-analyse.js" defer></script>
+  <script src="searchHandler.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen p-4">
-    <div class="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl p-6 sm:p-8">
-        <!-- Title -->
-        <h1 id="search-title" class="text-4xl font-bold mb-6 text-center text-blue-700">Voter Search</h1>
+<body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
 
-        <!-- Search Form -->
-        <form id="searchForm" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <input type="text" id="firstName" placeholder="First Name"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
-
-            <select id="lastName"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="">Select Last Name</option>
-            </select>
-
-            <select id="gender"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="">Any Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-
-            <select id="ageRange"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="">All Age Groups</option>
-                <option value="18-25">18–25</option>
-                <option value="26-35">26–35</option>
-                <option value="36-45">36–45</option>
-                <option value="46-55">46–55</option>
-                <option value="56-65">56–65</option>
-                <option value="66-75">66–75</option>
-                <option value="76-85">76–85</option>
-                <option value="86-100">86–100</option>
-            </select>
-
-            <button type="submit"
-                class="sm:col-span-2 lg:col-span-1 w-full bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200 font-semibold">
-                🔍 Search
-            </button>
-            <button id="analyseBtn" type="button"
-                class="sm:col-span-2 lg:col-span-1 w-full bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-600 transition duration-200 font-semibold">
-                📊 Analyse
-            </button>
-
-        </form>
-
-        <!-- Search Summary -->
-        <div id="searchSummary"
-            class="bg-blue-100/60 border border-blue-300 p-4 rounded-lg mb-6 text-gray-800 text-sm hidden"></div>
-
-        <!-- Results -->
-        <div id="results" class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"></div>
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 text-2xl font-bold text-orange-500 tracking-wide">
+          🗳️ Know Your Voter
+        </div>
+        <div class="hidden sm:flex space-x-4">
+          <!-- Add future nav links here -->
+        </div>
+      </div>
     </div>
+  </nav>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const searchTitle = document.getElementById('search-title');
-            const params = new URLSearchParams(window.location.search);
-            const constituency = params.get('constituency');
-            const booth = params.get('booth');
-            if (searchTitle && constituency && booth) {
-                searchTitle.textContent = `Voter Search – ${constituency} (Booth: ${booth})`;
-            }
-        });
-    </script>
+  <!-- Main Container -->
+  <div class="max-w-6xl mx-auto mt-6 bg-white shadow-2xl rounded-2xl p-6 sm:p-8">
+
+    <!-- Dynamic Title -->
+    <h1 id="search-title" class="text-3xl font-semibold mb-6 text-center text-blue-800">Voter Search</h1>
+
+    <!-- Search Form -->
+    <form id="searchForm" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <input type="text" id="firstName" placeholder="First Name"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <select id="lastName"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">Any Last Name</option>
+      </select>
+
+      <select id="gender"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">Any Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <select id="ageRange"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="">All Age Groups</option>
+        <option value="18-25">18–25</option>
+        <option value="26-35">26–35</option>
+        <option value="36-45">36–45</option>
+        <option value="46-55">46–55</option>
+        <option value="56-65">56–65</option>
+        <option value="66-75">66–75</option>
+        <option value="76-85">76–85</option>
+        <option value="86-100">86–100</option>
+      </select>
+
+      <button type="submit"
+        class="sm:col-span-2 lg:col-span-1 w-full bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200 font-semibold">
+        🔍 Search
+      </button>
+
+      <button id="analyseBtn" type="button"
+        class="sm:col-span-2 lg:col-span-1 w-full bg-yellow-500 text-white py-2 px-6 rounded-lg hover:bg-yellow-600 transition duration-200 font-semibold">
+        📊 Analyse
+      </button>
+    </form>
+
+    <!-- Search Summary -->
+    <div id="searchSummary"
+      class="bg-blue-100/60 border border-blue-300 p-4 rounded-lg mb-6 text-gray-800 text-sm hidden"></div>
+
+    <!-- Results -->
+    <div id="results" class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+
+  <!-- Update Title Based on Params -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const searchTitle = document.getElementById('search-title');
+      const params = new URLSearchParams(window.location.search);
+      const constituency = params.get('constituency');
+      const booth = params.get('booth');
+      if (searchTitle && constituency && booth) {
+        searchTitle.textContent = `Voter Search – ${constituency} (Booth: ${booth})`;
+      }
+    });
+  </script>
+
 </body>
 
 </html>
