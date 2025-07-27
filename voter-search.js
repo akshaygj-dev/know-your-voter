@@ -44,3 +44,40 @@ async function searchVoters(sheetId, sheetName, filters = {}) {
   }
 }
 
+/**
+ * Fetches unique last names from a specific Google Sheet endpoint.
+ * @param {string} sheetId - The Google Sheet ID (from the mapping JSON).
+ * @returns {Promise<Array>} - Sorted array of unique last names
+ */
+async function fetchUniqueLastNames(sheetId, sheetName) {
+  const SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${sheetName}`;
+
+  try {
+    const res = await fetch(SHEET_URL);
+    const text = await res.text();
+    const jsonText = text.match(/(?<=\{)(.*)(?=\}\);)/s);
+    const parsed = JSON.parse(`{${jsonText[0]}}`);
+
+    const cols = parsed.table.cols.map(c => c.label);
+    const rows = parsed.table.rows.map(row => {
+      const obj = {};
+      row.c.forEach((cell, i) => {
+        obj[cols[i]] = cell?.v?.toString().trim() || '';
+      });
+      return obj;
+    });
+
+    // Get unique last names, sort them, and filter out empty values
+    const uniqueLastNames = [...new Set(rows
+      .map(row => row['LAST NAME'])
+      .filter(name => name && name.trim())
+      .sort()
+    )];
+
+    return uniqueLastNames;
+  } catch (err) {
+    console.error('Error fetching last names:', err);
+    return [];
+  }
+}
+

@@ -2,16 +2,37 @@
 const form = document.getElementById('searchForm');
 const resultsContainer = document.getElementById('results');
 const summaryContainer = document.getElementById('searchSummary');
+const lastNameSelect = document.getElementById('lastName');
 
 let constituencyMap = [];
 
 fetch('districts.json')
     .then(res => res.json())
-    .then(data => {
+    .then(async data => {
         for (const district in data) {
             data[district].forEach(c => {
                 constituencyMap.push({ ...c, district });
             });
+        }
+
+        // Get constituency and booth from URL
+        const params = new URLSearchParams(window.location.search);
+        const constituency = params.get('constituency');
+        const booth = params.get('booth');
+
+        if (constituency) {
+            const matched = constituencyMap.find(entry =>
+                entry.constituency.toLowerCase() === constituency.toLowerCase()
+            );
+
+            if (matched && matched.sheet_id) {
+                // Fetch and populate last names
+                const lastNames = await fetchUniqueLastNames(matched.sheet_id, booth);
+                lastNameSelect.innerHTML = `
+                    <option value="">Select Last Name</option>
+                    ${lastNames.map(name => `<option value="${name}">${name}</option>`).join('')}
+                `;
+            }
         }
     });
 
@@ -19,7 +40,7 @@ form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
+    const lastName = lastNameSelect.value;
     const gender = document.getElementById('gender').value;
     const ageRange = document.getElementById('ageRange').value;
 
