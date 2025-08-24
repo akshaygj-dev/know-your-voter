@@ -94,16 +94,13 @@ form.addEventListener('submit', async function (e) {
         return;
     }
 
-    //   <li><strong>First Name:</strong> ${r['FIRST NAME']}</li>
-    //   <li><strong>Last Name:</strong> ${r['LAST NAME']}</li>
-
     resultsContainer.innerHTML = results.map(r => `
   <div class="p-4 border rounded-xl bg-white shadow-sm hover:shadow-md transition duration-300">
-    <h2 class="text-lg font-semibold text-blue-700 mb-2">${r.Name || 'Unnamed Voter'}</h2>
+    <h2 class="text-lg font-semibold text-blue-700 mb-2">${r['First Name']} ${r['Last Name'] || ''}</h2>
     <ul class="space-y-1 text-sm text-gray-700">
-      <li><strong>Gender:</strong> ${r.Gender}</li>
-      <li><strong>Age:</strong> ${r.Age}</li>
-      <li><strong>EPIC:</strong> ${r['EPIC Number']}</li>
+      <li><strong>Gender:</strong> ${r['Gender']}</li>
+      <li><strong>Age:</strong> ${r['Age']}</li>
+      <li><strong>EPIC:</strong> ${r['ID']}</li>
     </ul>
   </div>
 `).join('');

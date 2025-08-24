@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    const uniqueEpic = new Set(results.map(r => r['EPIC Number'])).size;
+    // Update the uniqueEpic calculation
+    const uniqueEpic = new Set(results.map(r => r['ID'])).size;
 
     // Params
     const params = new URLSearchParams(window.location.search);

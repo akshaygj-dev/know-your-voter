@@ -30,8 +30,8 @@ async function searchVoters(sheetId, sheetName, filters = {}) {
       const [minAge, maxAge] = filters.ageRange ? filters.ageRange.split('-').map(Number) : [null, null];
 
       return (
-        (!filters.firstName || row['FIRST NAME'].toLowerCase().includes(filters.firstName.toLowerCase())) &&
-        (!filters.lastName || row['LAST NAME'].toLowerCase().includes(filters.lastName.toLowerCase())) &&
+        (!filters.firstName || row['First Name'].toLowerCase().includes(filters.firstName.toLowerCase())) &&
+        (!filters.lastName || row['Last Name'].toLowerCase().includes(filters.lastName.toLowerCase())) &&
         (!filters.gender || row['Gender'].toLowerCase() === filters.gender.toLowerCase()) &&
         (!filters.ageRange || (age >= minAge && age <= maxAge))
       );
@@ -69,7 +69,7 @@ async function fetchUniqueLastNames(sheetId, sheetName) {
 
     // Get unique last names, sort them, and filter out empty values
     const uniqueLastNames = [...new Set(rows
-      .map(row => row['LAST NAME'])
+      .map(row => row['Last Name'])
       .filter(name => name && name.trim())
       .sort()
     )];
