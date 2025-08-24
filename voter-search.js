@@ -67,14 +67,22 @@ async function fetchUniqueLastNames(sheetId, sheetName) {
       return obj;
     });
 
-    // Get unique last names, sort them, and filter out empty values
-    const uniqueLastNames = [...new Set(rows
-      .map(row => row['Last Name'])
-      .filter(name => name && name.trim())
-      .sort()
-    )];
+    // Count occurrences of each last name
+    const lastNameCounts = rows.reduce((acc, row) => {
+      const lastName = row['Last Name'].trim();
+      if (lastName) {
+        acc[lastName] = (acc[lastName] || 0) + 1;
+      }
+      return acc;
+    }, {});
 
-    return uniqueLastNames;
+    // Filter for names appearing 5 or more times and sort them
+    const frequentLastNames = Object.entries(lastNameCounts)
+      .filter(([_, count]) => count >= 5)
+      .map(([name]) => name)
+      .sort();
+
+    return frequentLastNames;
   } catch (err) {
     console.error('Error fetching last names:', err);
     return [];
