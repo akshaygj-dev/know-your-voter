@@ -7,7 +7,7 @@
  * @returns {Promise<Array>} - Filtered rows
  */
 async function searchVoters(sheetId, sheetName, filters = {}) {
-  const SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${sheetName}`;
+  const SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=Sheet${sheetName}`;
 
   try {
     const res = await fetch(SHEET_URL);
@@ -50,7 +50,7 @@ async function searchVoters(sheetId, sheetName, filters = {}) {
  * @returns {Promise<Array>} - Sorted array of unique last names
  */
 async function fetchUniqueLastNames(sheetId, sheetName) {
-  const SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${sheetName}`;
+  const SHEET_URL = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=Sheet${sheetName}`;
 
   try {
     const res = await fetch(SHEET_URL);
