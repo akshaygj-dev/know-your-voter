@@ -169,10 +169,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <tbody>
                   ${(() => {
                     const rows = [];
-                    for (let i = 0; i < frequentLastNames.length; i += 3) {
+                    // Calculate number of rows needed (ceil to handle uneven division)
+                    const rowsPerColumn = Math.ceil(frequentLastNames.length / 3);
+                    
+                    // Create rows
+                    for (let i = 0; i < rowsPerColumn; i++) {
                       const row = [];
-                      for (let j = 0; j < 3; j++) {
-                        const item = frequentLastNames[i + j];
+                      // Add items for each of the three columns
+                      for (let col = 0; col < 3; col++) {
+                        const index = col * rowsPerColumn + i;
+                        const item = frequentLastNames[index];
                         if (item) {
                           row.push(`
                             <td class="py-2 px-3 border font-medium">${item[0]}</td>
