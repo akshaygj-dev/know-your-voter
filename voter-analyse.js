@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Build UI
     summaryContainer.classList.remove('hidden');
     summaryContainer.innerHTML = `
-    <div class="bg-white shadow-md rounded-xl p-6 border border-indigo-200 text-sm">
+    <div class="bg-white shadow-md rounded-xl p-3 sm:p-6 border border-indigo-200 text-sm">
       <div class="mb-4">
         <h2 class="text-lg font-semibold text-indigo-700">📍 <strong>${constituency}</strong> Constituency | Booth: <strong>${booth}</strong> | Total Voters: <strong>${results.length}</strong></h2>
       </div>
