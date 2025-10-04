@@ -134,6 +134,68 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
+      <div class="mb-4">
+        <p class="font-semibold text-gray-800 mb-2">📋 Last Names (Count > 5)</p>
+        <div class="overflow-x-auto">
+          ${(() => {
+            // Count last names
+            const lastNameCount = {};
+            results.forEach(r => {
+              const lastName = r['Last Name']?.trim() || 'Not Mentioned';
+              lastNameCount[lastName] = (lastNameCount[lastName] || 0) + 1;
+            });
+
+            // Filter and sort last names with count > 5
+            const frequentLastNames = Object.entries(lastNameCount)
+              .filter(([_, count]) => count > 5)
+              .sort((a, b) => b[1] - a[1]); // Sort by count descending
+
+            if (frequentLastNames.length === 0) {
+              return '<p class="text-gray-600">No last names with more than 5 occurrences found.</p>';
+            }
+
+            return `
+              <table class="w-full text-center text-sm border border-gray-300 rounded-md">
+                <thead class="bg-indigo-100 text-gray-700">
+                  <tr>
+                    <th class="py-2 px-3 border">Last Name</th>
+                    <th class="py-2 px-3 border">Count</th>
+                    <th class="py-2 px-3 border">Last Name</th>
+                    <th class="py-2 px-3 border">Count</th>
+                    <th class="py-2 px-3 border">Last Name</th>
+                    <th class="py-2 px-3 border">Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${(() => {
+                    const rows = [];
+                    for (let i = 0; i < frequentLastNames.length; i += 3) {
+                      const row = [];
+                      for (let j = 0; j < 3; j++) {
+                        const item = frequentLastNames[i + j];
+                        if (item) {
+                          row.push(`
+                            <td class="py-2 px-3 border font-medium">${item[0]}</td>
+                            <td class="py-2 px-3 border">${item[1]}</td>
+                          `);
+                        } else {
+                          row.push(`
+                            <td class="py-2 px-3 border"></td>
+                            <td class="py-2 px-3 border"></td>
+                          `);
+                        }
+                      }
+                      rows.push(`<tr class="even:bg-gray-50">${row.join('')}</tr>`);
+                    }
+                    return rows.join('');
+                  })()}
+                </tbody>
+              </table>
+            `;
+          })()}
+        </div>
+      </div>
+
       <div class="text-gray-700 mt-4">
         <p>Unique EPIC Numbers: <strong>${uniqueEpic}</strong></p>
       </div>
