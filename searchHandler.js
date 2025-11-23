@@ -6,6 +6,7 @@ const lastNameSelect = document.getElementById('lastName');
 
 let constituencyMap = [];
 
+
 fetch('districts.json')
     .then(res => res.json())
     .then(async data => {
@@ -25,14 +26,18 @@ fetch('districts.json')
                 entry.constituency.toLowerCase() === constituency.toLowerCase()
             );
 
-            if (matched && matched.sheet_id) {
-                // Fetch and populate last names
-                const lastNames = await fetchUniqueLastNames(matched.sheet_id, booth);
-                lastNameSelect.innerHTML = `
-                    <option value="">Any Last Name</option>
-                    ${lastNames.map(name => `<option value="${name}">${name}</option>`).join('')}
-                `;
-            }
+            if (matched) {
+                    // Resolve sheet id based on booth ranges (backwards compatible)
+                    const sheetId = getSheetIdForBooth(matched, booth);
+                    if (sheetId) {
+                        // Fetch and populate last names
+                        const lastNames = await fetchUniqueLastNames(sheetId, booth);
+                        lastNameSelect.innerHTML = `
+                            <option value="">Any Last Name</option>
+                            ${lastNames.map(name => `<option value="${name}">${name}</option>`).join('')}
+                        `;
+                    }
+                }
         }
     });
 
@@ -58,13 +63,18 @@ form.addEventListener('submit', async function (e) {
         entry.constituency.toLowerCase() === constituency.toLowerCase()
     );
 
-    if (!matched || !matched.sheet_id) {
-        resultsContainer.innerHTML = `No sheet found for ${constituency}`;
+    if (!matched) {
+        resultsContainer.innerHTML = `No constituency found for ${constituency}`;
         return;
     }
 
-    const sheetId = matched.sheet_id;
-    const sheetName = booth; // Assuming sheet is named after constituency
+    const sheetId = getSheetIdForBooth(matched, booth);
+    if (!sheetId) {
+        resultsContainer.innerHTML = `No sheet found for ${constituency} (booth ${booth})`;
+        return;
+    }
+
+    const sheetName = booth; // Assuming sheet is named after booth
 
     const results = await searchVoters(sheetId, sheetName, {
         firstName,

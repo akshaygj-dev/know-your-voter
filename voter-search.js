@@ -76,9 +76,9 @@ async function fetchUniqueLastNames(sheetId, sheetName) {
       return acc;
     }, {});
 
-    // Filter for names appearing 5 or more times and sort them
+    // Filter for names appearing 8 or more times and sort them
     const frequentLastNames = Object.entries(lastNameCounts)
-      .filter(([_, count]) => count >= 5)
+      .filter(([_, count]) => count >= 8)
       .map(([name]) => name)
       .sort();
 

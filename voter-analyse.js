@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.constituency.toLowerCase() === constituency.toLowerCase()
       );
 
-      if (!matched || !matched.sheet_id) {
-        resultsContainer.innerHTML = `No sheet found for ${constituency}`;
+      // Resolve sheet id using shared helper from `utils.js`
+      const sheetId = window.getSheetIdForBooth ? window.getSheetIdForBooth(matched, booth) : null;
+      if (!sheetId) {
+        resultsContainer.innerHTML = `No sheet found for ${constituency} (booth ${booth})`;
         return;
       }
-
-      const sheetId = matched.sheet_id;
       const sheetName = booth;
 
       window.latestResults = await searchVoters(sheetId, sheetName);
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="mb-4">
-        <p class="font-semibold text-gray-800 mb-2">📋 Last Names (Count > 5)</p>
+        <p class="font-semibold text-gray-800 mb-2">📋 Last Names (Count > 8)</p>
         <div class="overflow-x-auto">
           ${(() => {
             // Count last names
@@ -145,13 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
               lastNameCount[lastName] = (lastNameCount[lastName] || 0) + 1;
             });
 
-            // Filter and sort last names with count > 5
+            // Filter and sort last names with count > 8
             const frequentLastNames = Object.entries(lastNameCount)
-              .filter(([_, count]) => count > 5)
+              .filter(([_, count]) => count >= 8)
               .sort((a, b) => b[1] - a[1]); // Sort by count descending
 
             if (frequentLastNames.length === 0) {
-              return '<p class="text-gray-600">No last names with more than 5 occurrences found.</p>';
+              return '<p class="text-gray-600">No last names with more than 8 occurrences found.</p>';
             }
 
             return `
