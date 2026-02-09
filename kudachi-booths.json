@@ -1,6 +1,6 @@
 {
   "constituency": "Kudachi",
-  "generated_at": "2026-02-09T12:36:58.816Z",
+  "generated_at": "2026-02-09T12:53:43.595Z",
   "booths": {
     "1": {
       "total_voters": 862,
@@ -1834,8 +1834,113 @@
       ]
     },
     "16": {
-      "total_voters": 1,
-      "last_names": []
+      "total_voters": 777,
+      "last_names": [
+        {
+          "name": "MUJAWAR",
+          "count": 29
+        },
+        {
+          "name": "Inamadar",
+          "count": 25
+        },
+        {
+          "name": "Hayatkhan",
+          "count": 24
+        },
+        {
+          "name": "BEPARI",
+          "count": 23
+        },
+        {
+          "name": "Bepari",
+          "count": 23
+        },
+        {
+          "name": "Mujawar",
+          "count": 19
+        },
+        {
+          "name": "Mulla",
+          "count": 19
+        },
+        {
+          "name": "Father",
+          "count": 18
+        },
+        {
+          "name": "Hayathakhan",
+          "count": 15
+        },
+        {
+          "name": "HAYATKHAN",
+          "count": 13
+        },
+        {
+          "name": "Dhale",
+          "count": 12
+        },
+        {
+          "name": "Varagante",
+          "count": 11
+        },
+        {
+          "name": "MULLA",
+          "count": 11
+        },
+        {
+          "name": "DHALE",
+          "count": 11
+        },
+        {
+          "name": "shirke",
+          "count": 10
+        },
+        {
+          "name": "Pathan",
+          "count": 9
+        },
+        {
+          "name": "Mujavar",
+          "count": 9
+        },
+        {
+          "name": "Salunke",
+          "count": 9
+        },
+        {
+          "name": "mujawar",
+          "count": 9
+        },
+        {
+          "name": "MOMIN",
+          "count": 8
+        },
+        {
+          "name": "KOTWAL",
+          "count": 8
+        },
+        {
+          "name": "SHAIKH",
+          "count": 8
+        },
+        {
+          "name": "Shirke",
+          "count": 8
+        },
+        {
+          "name": "Saiyad",
+          "count": 8
+        },
+        {
+          "name": "Husband",
+          "count": 8
+        },
+        {
+          "name": "Halyal",
+          "count": 8
+        }
+      ]
     },
     "17": {
       "total_voters": 918,
