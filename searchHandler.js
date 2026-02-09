@@ -7,6 +7,7 @@ const lastNameSelect = document.getElementById('lastName');
 let constituencyMap = [];
 
 
+
 fetch('districts.json')
     .then(res => res.json())
     .then(async data => {
@@ -25,6 +26,33 @@ fetch('districts.json')
             const matched = constituencyMap.find(entry =>
                 entry.constituency.toLowerCase() === constituency.toLowerCase()
             );
+
+            // Check if pre-processed booth data exists and add button to view analysis
+            const checkBoothData = async () => {
+              try {
+                const filename = `${constituency.toLowerCase()}-booths.json`;
+                const res = await fetch(filename, { method: 'HEAD' });
+                if (res.ok) {
+                  let boothDataBtn = document.getElementById('boothDataBtn');
+                  if (!boothDataBtn) {
+                    boothDataBtn = document.createElement('button');
+                    boothDataBtn.id = 'boothDataBtn';
+                    boothDataBtn.type = 'button';
+                    boothDataBtn.className = 'sm:col-span-2 lg:col-span-1 w-full bg-green-600 text-white py-2 px-6 rounded-lg hover:bg-green-700 transition duration-200 font-semibold';
+                    boothDataBtn.textContent = '📊 Constituency Analysis';
+                    const district = params.get('district') || 'N/A';
+                    boothDataBtn.addEventListener('click', () => {
+                      window.location.href = `analysis.html?district=${encodeURIComponent(district)}&constituency=${encodeURIComponent(constituency)}`;
+                    });
+                    const searchForm = document.getElementById('searchForm');
+                    searchForm.appendChild(boothDataBtn);
+                  }
+                }
+              } catch (err) {
+                console.log(`No booth data for ${constituency}`);
+              }
+            };
+            checkBoothData();
 
             if (matched) {
                     // Resolve sheet id based on booth ranges (backwards compatible)
